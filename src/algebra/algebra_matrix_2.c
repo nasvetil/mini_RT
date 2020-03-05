@@ -1,15 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Rtv1.h                                             :+:      :+:    :+:   */
+/*   algebra_matrix_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjuana <tjuana@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dorange- <dorange-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/05 15:48:09 by tjuana            #+#    #+#             */
-/*   Updated: 2020/03/05 16:11:18 by tjuana           ###   ########.fr       */
+/*   Created: 2020/02/21 20:55:10 by dorange-          #+#    #+#             */
+/*   Updated: 2020/02/21 21:01:30 by dorange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RTV1_H
+#include "doom.h"
 
-#endif
+double	ft_math_deg_to_rad(double angle_degrees)
+{
+	return ((angle_degrees) * M_PI / 180.0);
+}
+
+double	ft_math_rad_to_deg(double angle_radians)
+{
+	return ((angle_radians) * 180.0 / M_PI);
+}

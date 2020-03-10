@@ -19,6 +19,7 @@
 # include "const.h"
 
 # include "algebra.h"
+# include "parser.h"
 
 # include "general_struct.h"
 # include "gui_struct.h"

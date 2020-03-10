@@ -17,6 +17,19 @@
 			"externalConsole": false,
 			"MIMode": "lldb",
 			"preLaunchTask": "gcc build active file"
+		},
+		{
+			"name": "debug parser",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceRoot}/RTv1",
+			"args": ["${workspaceRoot}/scenes/scene_1.xml"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "lldb",
+			"preLaunchTask": "gcc build active file"
 		}
 	]
 }

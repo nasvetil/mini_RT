@@ -34,6 +34,7 @@ func_struct.h \
 general_struct.h \
 gui_func.h \
 gui_struct.h \
+parser.h \
 render_func.h
 
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
@@ -81,7 +82,6 @@ ALGEBRA_OBJS = $(addprefix $(ALGEBRA_OBJS_DIRECTORY), $(ALGEBRA_OBJS_LIST))
 
 
 
-
 # FUNC FUNCTIONS
 FUNC_SRCS_DIRECTORY = $(SRCS_PATH)func/
 FUNC_LIST = \
@@ -99,6 +99,17 @@ func_one_file.c
 FUNC_OBJS_DIRECTORY = $(OBJS_PATH)
 FUNC_OBJS_LIST = $(patsubst %.c, %.o, $(FUNC_LIST))
 FUNC_OBJS = $(addprefix $(FUNC_OBJS_DIRECTORY), $(FUNC_OBJS_LIST))
+
+
+
+# PARSER FUNCTIONS
+PARSER_SRCS_DIRECTORY = $(SRCS_PATH)parser/
+PARSER_LIST = \
+parser_general.c
+
+PARSER_OBJS_DIRECTORY = $(OBJS_PATH)
+PARSER_OBJS_LIST = $(patsubst %.c, %.o, $(PARSER_LIST))
+PARSER_OBJS = $(addprefix $(PARSER_OBJS_DIRECTORY), $(PARSER_OBJS_LIST))
 
 
 
@@ -180,7 +191,8 @@ $(MAIN_OBJS) \
 $(ALGEBRA_OBJS) \
 $(GUI_OBJS) \
 $(FUNC_OBJS) \
-$(RENDER_OBJS) \
+$(PARSER_OBJS) \
+$(RENDER_OBJS)
 
 $(NAME): $(LIBFT) $(OBJS_COMPILE)
 	@echo "\n$(NAME): $(GREEN)object files were created$(RESET)"
@@ -206,6 +218,11 @@ $(ALGEBRA_OBJS_DIRECTORY)%.o : $(ALGEBRA_SRCS_DIRECTORY)%.c $(HEADERS)
 
 $(FUNC_OBJS_DIRECTORY)%.o : $(FUNC_SRCS_DIRECTORY)%.c $(HEADERS)
 	@mkdir -p $(FUNC_OBJS_DIRECTORY) 2>/dev/null || echo "" > /dev/null
+	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
+	@echo "$(C_TX_GREY).$(RESET)\c"
+
+$(PARSER_OBJS_DIRECTORY)%.o : $(PARSER_SRCS_DIRECTORY)%.c $(HEADERS)
+	@mkdir -p $(PARSER_OBJS_DIRECTORY) 2>/dev/null || echo "" > /dev/null
 	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
 	@echo "$(C_TX_GREY).$(RESET)\c"
 

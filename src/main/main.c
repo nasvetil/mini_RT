@@ -15,6 +15,8 @@ void	ft_main(int c, char **v)
 	(void)v;
 	if (c > 2)
 		ft_error("WRONG arguments");
+	if (c > 1)
+		parser_xml_file(v[1]);
 	// ft_unpack();
 	w.sdl = sdl_init(w.sdl);
 	ft_gui_init(&w);

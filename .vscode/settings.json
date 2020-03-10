@@ -4,6 +4,8 @@
 	"editor.detectIndentation": false,
 	"editor.tabSize": 4,
 	"files.associations": {
-		"algorithm": "c"
+		"algorithm": "c",
+		"sstream": "c"
 	},
+	"editor.renderWhitespace": "all",
 }

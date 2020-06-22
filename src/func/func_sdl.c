@@ -60,7 +60,8 @@ t_sdl		*sdl_init(t_sdl *sdl)
 		WIN_WIDTH, WIN_HEIGHT)))
 		ft_error("SDL non textures");
 	ft_set_window_icon(sdl);
-	sdl_create_background_music(sdl);
+	// Not use
+	// sdl_create_background_music(sdl);
 	sdl->running = 1;
 	if (TTF_Init() != 0)
 		ft_error("ttf(w)\n");

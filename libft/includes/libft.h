@@ -112,4 +112,7 @@ size_t				ft_lstcount(t_list *lst);
 int					ft_2arrclean(char ***dst);
 void				ft_bzero_char(void *b, size_t n);
 int					ft_2d_int_arrclean(int ***dst);
+
+int					ft_isspace(int c);
+
 #endif

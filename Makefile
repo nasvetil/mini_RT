@@ -12,7 +12,7 @@ FLAGS = -Wall -Werror -Wextra
 USERNAME = $(shell whoami)
 LIBRARIES = \
 -lft -L$(LIBFT_DIRECTORY)\
--lSDL2 -lSDL2main -L/Users/$(USERNAME)/.brew/Cellar/sdl2/2.0.10/lib \
+-lSDL2 -lSDL2main -L/Users/$(USERNAME)/.brew/Cellar/sdl2/2.0.12_1/lib \
 -lSDL2_ttf -L/Users/$(USERNAME)/.brew/Cellar/sdl2_ttf/2.0.15/lib \
 -lSDL2_image -L/Users/$(USERNAME)/.brew/Cellar/sdl2_image/2.0.5/lib \
 -lSDL2_mixer -L/Users/$(USERNAME)/.brew/Cellar/sdl2_mixer/2.0.4/lib 

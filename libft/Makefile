@@ -28,7 +28,7 @@ SRCS = ft_putchar.c ft_putchar_fd.c ft_atoi.c ft_strcmp.c ft_strdup.c \
 		ft_strndup.c ft_strcdup.c ft_strnlen.c get_next_line.c \
 		ft_intsplitstr.c ft_putdbl.c ft_count_lines.c ft_line_len.c \
 		ft_countwords.c ft_lst_rev.c ft_lstcount.c ft_2arrclean.c \
-		ft_bzero_char.c ft_2d_int_arrclean.c
+		ft_bzero_char.c ft_2d_int_arrclean.c ft_isspace.c
 
 
 
@@ -48,7 +48,7 @@ OBJECTS = ft_putchar.o ft_putchar_fd.o ft_atoi.o ft_strcmp.o ft_strdup.o \
 		ft_strndup.o ft_strcdup.o ft_strnlen.o get_next_line.o \
 		ft_intsplitstr.o ft_putdbl.o ft_count_lines.o ft_line_len.o \
 		ft_countwords.o ft_lst_rev.o ft_lstcount.o ft_2arrclean.o \
-		ft_bzero_char.o ft_2d_int_arrclean.o
+		ft_bzero_char.o ft_2d_int_arrclean.o ft_isspace.o
 
 
 INCLUDES=./includes/**

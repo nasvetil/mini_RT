@@ -1,28 +1,62 @@
 #include "doom.h"
 
+t_list*			parser_xml_get_attr_list(char *start_attr, char *end_attr) {
+	// char		*ptr;
+	// t_list		*list;
+
+	// ptr = start_attr;
+	// list = NULL;
+
+	size_t		len;
+	t_list		*list;
+	char*		attr;
+
+	len = end_attr - start_attr;
+
+	attr = ft_strncpy(ft_strnew(len), start_attr, len);
+	
+	list = ft_lstnew(attr, ft_strlen(attr));
+	return list;
+}
+
+void			parser_xml_set_elem_param(char *start_open_tag, char *end_open_tag, t_xml_elem *elem)
+{
+	size_t		len;
+	char		*ptr;
+
+	ptr = start_open_tag;
+	while (ptr < end_open_tag && !ft_isspace(*ptr))
+		ptr++;
+	len = ptr - start_open_tag;
+	elem->name = ft_strncpy(ft_strnew(len), start_open_tag, len);
+	if (ptr != end_open_tag)
+		elem->attr = parser_xml_get_attr_list(++ptr, end_open_tag);
+}
+
 int			parser_xml_get_open_tag(char *file_start, char *file_end, t_xml_elem *elem)
 {
-	char		*start_tag;
+	char		*start_open_tag;
+	char		*end_open_tag;
 	char		*start_close_tag;
-	char		*end_tag;
-	size_t		len;
 
-	start_tag = ft_strstr(file_start, "<");
+	start_open_tag = ft_strstr(file_start, "<");
 	start_close_tag = ft_strstr(file_start, "</");
-	if (start_tag == NULL || \
-		start_tag > file_end || \
+	if (start_open_tag == NULL || \
+		start_open_tag > file_end || \
 		start_close_tag == NULL || \
-		start_tag == start_close_tag)
+		start_open_tag == start_close_tag)
 		return (0);
-	end_tag = ft_strstr(start_tag, ">");
-	if (start_tag == NULL || end_tag == NULL || end_tag > file_end)
+
+	end_open_tag = ft_strstr(start_open_tag, ">");
+	if (start_open_tag == NULL || \
+		end_open_tag == NULL || \
+		end_open_tag > file_end)
 		ft_error("[XML Parser]: Syntax error: open tag");
-	elem->ptr_begin = start_tag;
-	start_tag++;
-	len = end_tag - start_tag;
-	elem->name = ft_strncpy(ft_strnew(len), start_tag, len);
-	end_tag++;
-	elem->ptr_begin_content = end_tag;
+	elem->ptr_begin = start_open_tag;
+	start_open_tag++;
+	parser_xml_set_elem_param(start_open_tag, end_open_tag, elem);
+	end_open_tag++;
+	elem->ptr_begin_content = end_open_tag;
 	return (1);
 }
 

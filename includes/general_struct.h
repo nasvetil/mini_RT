@@ -12,10 +12,10 @@
 **	Define for music and sound
 ** **************************************************************************
 */
-# define SONG_0			"music/wolf3d_menu.mp3"
-# define SONG_1			"music/song_1.mp3"
-# define SONG_2			"music/song_2.mp3"
-# define SHOT			"music/shot.wav"
+// # define SONG_0			"music/wolf3d_menu.mp3"
+// # define SONG_1			"music/song_1.mp3"
+// # define SONG_2			"music/song_2.mp3"
+// # define SHOT			"music/shot.wav"
 
 typedef struct			s_font
 {

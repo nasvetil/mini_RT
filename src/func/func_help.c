@@ -29,8 +29,8 @@ void			ft_clean_sdl(t_wolf3d *w)
 		SDL_DestroyRenderer(w->sdl->renderer);
 	if (w->sdl->win)
 		SDL_DestroyWindow(w->sdl->win);
-	Mix_FreeMusic(w->sdl->music);
-	Mix_CloseAudio();
+	// Mix_FreeMusic(w->sdl->music);
+	// Mix_CloseAudio();
 	SDL_Delay(777);
 	IMG_Quit();
 	SDL_Quit();

@@ -105,7 +105,10 @@ FUNC_OBJS = $(addprefix $(FUNC_OBJS_DIRECTORY), $(FUNC_OBJS_LIST))
 # PARSER FUNCTIONS
 PARSER_SRCS_DIRECTORY = $(SRCS_PATH)parser/
 PARSER_LIST = \
-parser_general.c
+parser_general.c \
+parser_get_file.c \
+parser_get_elem.c \
+parser_get_elem_param.c
 
 PARSER_OBJS_DIRECTORY = $(OBJS_PATH)
 PARSER_OBJS_LIST = $(patsubst %.c, %.o, $(PARSER_LIST))

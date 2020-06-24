@@ -22,10 +22,13 @@ typedef struct				s_rt_obj
 	double					height;
 }							t_rt_obj;
 
-typedef struct				s_rt_scene
+typedef struct				s_rt_camera
 {
-	int						i;
-}							t_rt_scene;
+	double					width;
+	double					height;
+	t_vector3				coord;
+	t_vector3				dir;
+}							t_rt_camera;
 
 void	ft_render_redraw(t_wolf3d *w, t_list *dom);
 

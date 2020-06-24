@@ -35,7 +35,7 @@ general_struct.h \
 gui_func.h \
 gui_struct.h \
 parser.h \
-render_func.h
+render.h
 
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 

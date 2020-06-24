@@ -38,7 +38,7 @@ void	ft_main_gui_init_win_menu_btn(t_list *head)
 	ft_gui_elem_set_text(elem->child, "v1", 72, "fonts/Raleway-Black.ttf");
 	ft_gui_elem_init_grid(head, "win_menu_btngame", 31, (t_gui_coord){2, 2, 0});
 	ft_gui_elem_set_color(elem->child, 0x30444444);
-	ft_gui_elem_set_button(elem->child, "Game", 30);
+	ft_gui_elem_set_button(elem->child, "Go!", 30);
 	ft_gui_elem_set_event(elem->child, \
 		ft_gui_mousebuttonup_win_menu_btngame, \
 		SDL_MOUSEBUTTONUP, 0);

@@ -20,6 +20,7 @@
 
 # include "algebra.h"
 # include "parser.h"
+# include "render.h"
 
 # include "general_struct.h"
 # include "gui_struct.h"
@@ -27,7 +28,6 @@
 
 # include "func_func.h"
 # include "gui_func.h"
-# include "render_func.h"
 
 /*
 ** **************************************************************************

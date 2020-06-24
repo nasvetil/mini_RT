@@ -6,6 +6,7 @@
 # include <libft.h>
 # include "gui_struct.h"
 # include "SDL2/SDL_mixer.h"
+# include "render.h"
 
 /*
 ** **************************************************************************
@@ -83,6 +84,11 @@ typedef struct			s_wolf3d
 	int					v_d;
 	t_gui				gui;
 	void				*new_data;
+
+	// List for scenes object
+	// t_rt_scene			*scene;
+	t_list				*obj;
+	t_list				*light_obj;
 }						t_wolf3d;
 
 #endif
